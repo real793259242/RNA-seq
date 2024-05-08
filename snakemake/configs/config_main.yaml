@@ -1,0 +1,35 @@
+# This configure yaml file is used to define the parameters for the whole RNA-seq pipeline.
+
+
+## Set directory names.
+fastq_dir: fastq_pair  # Put raw fastq data here.
+reference_dir: ref
+reference_genome_dir: genome
+reference_transcriptome_dir: transcriptome
+reference_annotation_dir: annotation
+log_dir: logs
+output_dir: outputs
+output_fastqc_dir: fastqc
+output_index_dir: hisat2_index
+output_alignment_dir: hisat2_alignment
+output_sam2bam_dir: sam2bam
+output_featureCounts_dir: featureCounts
+
+
+## Reference url.
+reference_genome_download_url: ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+reference_annotation_download_url: ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_36/gencode.v36.annotation.gtf.gz
+
+
+
+
+## Which mapping reference do you want to use? Genome or transcriptome?
+REFERENCE: genome  # "genome" or "transcriptome" (code is not implemented when 'transcriptome'.)
+
+
+## Do you need to do trimming?
+TRIMMED: yes  # "yes" or "no". If yes, outputs/fastqc_trimmed/ will be created.
+
+
+## Number of threads
+num_threads: 4
